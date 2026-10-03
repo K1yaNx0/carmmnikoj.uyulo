@@ -1,0 +1,598 @@
+const cars = [
+
+  {
+    brand: "Mercedes-Benz",
+    model: "Maybach GLS 600",
+    year: 2024,
+    km: 11717,
+    price: 162825,
+    body: "SUV",
+    engine: "4.0 V8",
+    source: "AutoScout24",
+    url: "https://www.autoscout24.com/lst/mercedes-benz/gls-600/re_2024"
+  },
+
+  {
+    brand: "Mercedes-AMG",
+    model: "SL 63",
+    year: 2026,
+    km: 0,
+    price: 167711,
+    body: "Convertible",
+    engine: "4.0 V8",
+    source: "Mercedes-Benz",
+    url: "https://www.mercedes-benz.nl/passengercars/configurator.html"
+  },
+
+  {
+    brand: "Mercedes-Benz",
+    model: "CLS 500",
+    year: 2018,
+    km: 65000,
+    price: 49900,
+    body: "Coupe",
+    engine: "3.0 V6",
+    source: "Market estimate",
+    url: "https://www.autoscout24.com/"
+  },
+
+  {
+    brand: "Mercedes-AMG",
+    model: "G 63",
+    year: 2024,
+    km: 18000,
+    price: 189900,
+    body: "SUV",
+    engine: "4.0 V8",
+    source: "Market estimate",
+    url: "https://www.autoscout24.com/"
+  },
+
+  {
+    brand: "Mercedes-Benz",
+    model: "GLE 450 Coupe",
+    year: 2024,
+    km: 24000,
+    price: 99900,
+    body: "SUV",
+    engine: "3.0 I6",
+    source: "Market estimate",
+    url: "https://www.autoscout24.com/"
+  },
+
+  {
+    brand: "Lexus",
+    model: "LX 700h",
+    year: 2025,
+    km: 5000,
+    price: 154900,
+    body: "SUV",
+    engine: "3.4 V6 Hybrid",
+    source: "Market estimate",
+    url: "https://www.autoscout24.com/"
+  },
+
+  {
+    brand: "Toyota",
+    model: "Land Cruiser 300 VXR",
+    year: 2024,
+    km: 12000,
+    price: 109900,
+    body: "SUV",
+    engine: "3.5 V6",
+    source: "Market estimate",
+    url: "https://www.autoscout24.com/"
+  },
+
+  {
+    brand: "Toyota",
+    model: "4Runner",
+    year: 2025,
+    km: 3000,
+    price: 69900,
+    body: "SUV",
+    engine: "4.0 V6",
+    source: "Market estimate",
+    url: "https://www.autoscout24.com/"
+  },
+
+  {
+    brand: "Porsche",
+    model: "Cayenne S",
+    year: 2024,
+    km: 22000,
+    price: 112500,
+    body: "SUV",
+    engine: "4.0 V8",
+    source: "Market estimate",
+    url: "https://www.autoscout24.com/"
+  },
+
+  {
+    brand: "Land Rover",
+    model: "Range Rover",
+    year: 2024,
+    km: 19000,
+    price: 139900,
+    body: "SUV",
+    engine: "3.0 I6",
+    source: "Market estimate",
+    url: "https://www.autoscout24.com/"
+  },
+
+  {
+    brand: "Land Rover",
+    model: "Defender 110",
+    year: 2024,
+    km: 17000,
+    price: 82900,
+    body: "SUV",
+    engine: "3.0 I6",
+    source: "Market estimate",
+    url: "https://www.autoscout24.com/"
+  },
+
+  {
+    brand: "BMW",
+    model: "650i",
+    year: 2019,
+    km: 59000,
+    price: 55900,
+    body: "Coupe",
+    engine: "4.4 V8",
+    source: "Market estimate",
+    url: "https://www.autoscout24.com/"
+  },
+
+  {
+    brand: "BMW",
+    model: "M4 Competition",
+    year: 2022,
+    km: 23944,
+    price: 67999,
+    body: "Coupe",
+    engine: "3.0 I6",
+    source: "AutoScout24",
+    url: "https://www.autoscout24.com/lst/bmw/m4/re_2022"
+  },
+
+  {
+    brand: "BMW",
+    model: "M850i",
+    year: 2022,
+    km: 31000,
+    price: 89900,
+    body: "Coupe",
+    engine: "4.4 V8",
+    source: "Market estimate",
+    url: "https://www.autoscout24.com/"
+  },
+
+  {
+    brand: "BMW",
+    model: "XM",
+    year: 2024,
+    km: 14000,
+    price: 139900,
+    body: "SUV",
+    engine: "4.4 V8 Hybrid",
+    source: "Market estimate",
+    url: "https://www.autoscout24.com/"
+  },
+
+  {
+    brand: "BMW",
+    model: "X6",
+    year: 2024,
+    km: 21000,
+    price: 98900,
+    body: "SUV",
+    engine: "3.0 I6",
+    source: "Market estimate",
+    url: "https://www.autoscout24.com/"
+  },
+
+  {
+    brand: "RAM",
+    model: "1500 TRX",
+    year: 2022,
+    km: 35000,
+    price: 89900,
+    body: "Pickup",
+    engine: "6.2 V8",
+    source: "Market estimate",
+    url: "https://www.autoscout24.com/"
+  },
+
+  {
+    brand: "Honda",
+    model: "Civic Type R",
+    year: 2024,
+    km: 12000,
+    price: 59900,
+    body: "Hatchback",
+    engine: "2.0 Turbo",
+    source: "Market estimate",
+    url: "https://www.autoscout24.com/"
+  },
+
+  {
+    brand: "Volkswagen",
+    model: "Golf R",
+    year: 2024,
+    km: 15000,
+    price: 59900,
+    body: "Hatchback",
+    engine: "2.0 Turbo",
+    source: "Market estimate",
+    url: "https://www.autoscout24.com/"
+  },
+
+  {
+    brand: "Ford",
+    model: "Mustang GT Premium",
+    year: 2024,
+    km: 8000,
+    price: 72900,
+    body: "Coupe",
+    engine: "5.0 V8",
+    source: "Market estimate",
+    url: "https://www.autoscout24.com/"
+  }
+
+];
+
+
+const grid = document.querySelector("#grid");
+const search = document.querySelector("#search");
+const brandFilter = document.querySelector("#brandFilter");
+const bodyFilter = document.querySelector("#bodyFilter");
+const sortFilter = document.querySelector("#sortFilter");
+
+const activeCount = document.querySelector("#activeCount");
+const empty = document.querySelector("#empty");
+
+
+const money = value => {
+
+  return new Intl.NumberFormat(
+    "en-GB",
+    {
+      style: "currency",
+      currency: "EUR",
+      maximumFractionDigits: 0
+    }
+  ).format(value);
+
+};
+
+
+function initials(car) {
+
+  return (
+    car.brand.split(" ")[0][0] +
+    car.model.replace(/[^A-Za-z]/g, "")[0]
+  ).toUpperCase();
+
+}
+
+
+function render() {
+
+  let list = [...cars];
+
+  const query =
+    search.value
+      .trim()
+      .toLowerCase();
+
+  const brand =
+    brandFilter.value;
+
+  const body =
+    bodyFilter.value;
+
+
+  if (query) {
+
+    list = list.filter(car => {
+
+      return `${car.brand} ${car.model} ${car.engine}`
+        .toLowerCase()
+        .includes(query);
+
+    });
+
+  }
+
+
+  if (brand !== "all") {
+
+    list =
+      list.filter(car =>
+        car.brand === brand
+      );
+
+  }
+
+
+  if (body !== "all") {
+
+    list =
+      list.filter(car =>
+        car.body === body
+      );
+
+  }
+
+
+  if (sortFilter.value === "low") {
+
+    list.sort(
+      (a, b) => a.price - b.price
+    );
+
+  }
+
+
+  if (sortFilter.value === "high") {
+
+    list.sort(
+      (a, b) => b.price - a.price
+    );
+
+  }
+
+
+  if (sortFilter.value === "year") {
+
+    list.sort(
+      (a, b) => b.year - a.year
+    );
+
+  }
+
+
+  activeCount.textContent =
+    `${list.length} car${list.length === 1 ? "" : "s"}`;
+
+
+  empty.classList.toggle(
+    "hidden",
+    list.length !== 0
+  );
+
+
+  grid.innerHTML = list.map(
+    (car, index) => `
+
+      <article class="car-card">
+
+        <div class="car-photo">
+
+          ${
+            index < 3
+              ? '<span class="tag">FEATURED</span>'
+              : ""
+          }
+
+          <div class="photo-letter">
+            ${initials(car)}
+          </div>
+
+        </div>
+
+
+        <div class="car-info">
+
+          <span class="make">
+            ${car.brand}
+          </span>
+
+          <h3>
+            ${car.model}
+          </h3>
+
+
+          <div class="specs">
+
+            <span>
+              ${car.year}
+            </span>
+
+            <span>
+              ${
+                car.km
+                  ? car.km.toLocaleString() + " km"
+                  : "New"
+              }
+            </span>
+
+            <span>
+              ${car.body}
+            </span>
+
+          </div>
+
+
+          <div class="price-row">
+
+            <div class="price">
+              ${money(car.price)}
+            </div>
+
+            <div class="source">
+              ${car.source}
+            </div>
+
+          </div>
+
+
+          <a
+            class="buy"
+            href="${car.url}"
+            target="_blank"
+            rel="noopener"
+          >
+            View source listing ↗
+          </a>
+
+        </div>
+
+      </article>
+
+    `
+  ).join("");
+
+}
+
+
+/* BRAND DROPDOWN */
+
+[
+  ...new Set(
+    cars.map(car => car.brand)
+  )
+]
+.sort()
+.forEach(brand => {
+
+  const option =
+    document.createElement("option");
+
+  option.value = brand;
+  option.textContent = brand;
+
+  brandFilter.appendChild(option);
+
+});
+
+
+/* QUICK BRAND BUTTONS */
+
+document
+  .querySelectorAll(".chip")
+  .forEach(chip => {
+
+    chip.addEventListener(
+      "click",
+      () => {
+
+        document
+          .querySelectorAll(".chip")
+          .forEach(button =>
+            button.classList.remove("active")
+          );
+
+        chip.classList.add("active");
+
+        brandFilter.value =
+          chip.dataset.brand;
+
+        render();
+
+      }
+    );
+
+  });
+
+
+/* FILTERS */
+
+[
+  search,
+  brandFilter,
+  bodyFilter,
+  sortFilter
+]
+.forEach(element => {
+
+  element.addEventListener(
+    "input",
+    render
+  );
+
+});
+
+
+/* SELL FORM */
+
+document
+  .querySelector("#sellForm")
+  .addEventListener(
+    "submit",
+    event => {
+
+      event.preventDefault();
+
+      const formData =
+        new FormData(event.target);
+
+
+      const newCar = {
+
+        brand:
+          formData.get("brand"),
+
+        model:
+          formData.get("model"),
+
+        year:
+          Number(formData.get("year")),
+
+        km:
+          Number(formData.get("mileage")),
+
+        price:
+          Number(formData.get("price")),
+
+        body:
+          formData.get("body"),
+
+        engine:
+          "Seller supplied",
+
+        source:
+          "Your listing",
+
+        url:
+          "#sell"
+
+      };
+
+
+      cars.unshift(newCar);
+
+
+      document.querySelector(
+        "#carCount"
+      ).textContent = cars.length;
+
+
+      event.target.reset();
+
+
+      alert(
+        "Your listing has been published in this demo."
+      );
+
+
+      document
+        .querySelector("#inventory")
+        .scrollIntoView({
+          behavior: "smooth"
+        });
+
+
+      render();
+
+    }
+  );
+
+
+document.querySelector(
+  "#carCount"
+).textContent = cars.length;
+
+
+render();
